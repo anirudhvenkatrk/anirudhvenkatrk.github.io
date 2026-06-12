@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anirudh | Economics</title>
+<meta name="description" content="Anirudh — BA Economics at Madras School of Economics, incoming MSc Economics at Barcelona School of Economics. Research in financial econometrics, macrofinance, and applied micro.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FAFAF7;
+    --ink: #1A1916;
+    --ink-soft: #4A4842;
+    --ink-faint: #8C8A82;
+    --rule: #DCDAD2;
+    --dark: #16181D;
+    --dark-text: #E9E7E0;
+    --dark-faint: #8E8F94;
+    --dark-rule: #2C2E34;
+    --accent: #2D4A8A;
+    --serif: 'Newsreader', Georgia, serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 18px;
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; text-decoration-color: var(--ink-faint); transition: text-decoration-color 0.15s ease; }
+  a:hover { text-decoration-color: var(--accent); }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 1px; }
+
+  .mono {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Top nav ---------- */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(250, 250, 247, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0.85rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+  }
+  .nav-name { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; }
+  .nav-links { display: flex; gap: 1.4rem; flex-wrap: wrap; }
+  .nav-links a { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration: none; color: var(--ink-soft); }
+  .nav-links a:hover { color: var(--accent); }
+
+  /* ---------- Hero (dark) ---------- */
+  header {
+    background: var(--dark);
+    color: var(--dark-text);
+  }
+  .hero-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 7rem 2rem 5rem;
+  }
+  .hero-eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dark-faint);
+    margin-bottom: 2.2rem;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-optical-sizing: auto;
+    font-size: clamp(3rem, 8vw, 5.6rem);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    max-width: 18ch;
+  }
+  .hero-sub {
+    margin-top: 2.4rem;
+    font-size: 1.25rem;
+    font-weight: 300;
+    color: var(--dark-text);
+    max-width: 34rem;
+    line-height: 1.55;
+  }
+  .hero-sub a { text-decoration-color: var(--dark-faint); }
+  .ledger {
+    margin-top: 3.6rem;
+    padding-top: 1.1rem;
+    border-top: 1px solid var(--dark-rule);
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--dark-faint);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 0;
+  }
+  .ledger span::after {
+    content: "·";
+    margin: 0 0.9rem;
+    color: var(--dark-rule);
+  }
+  .ledger span:last-child::after { content: ""; margin: 0; }
+
+  /* ---------- Section scaffold ---------- */
+  section { border-bottom: 1px solid var(--rule); }
+  .section-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 4.5rem 2rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+  }
+  .section-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    position: sticky;
+    top: 4.5rem;
+    align-self: start;
+  }
+  .section-body { max-width: 40rem; }
+  .section-body > p + p { margin-top: 1.1rem; }
+
+  h2 {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 1.4rem;
+    letter-spacing: -0.005em;
+  }
+
+  /* ---------- Project entries ---------- */
+  .entry { padding: 1.6rem 0; border-top: 1px solid var(--rule); }
+  .entry:first-of-type { border-top: none; padding-top: 0; }
+  .entry-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .entry-title { font-size: 1.18rem; font-weight: 500; line-height: 1.35; }
+  .entry-meta {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    white-space: nowrap;
+  }
+  .entry p { margin-top: 0.55rem; color: var(--ink-soft); font-size: 1rem; }
+  .entry-result {
+    margin-top: 0.7rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+  }
+  .entry-links { margin-top: 0.7rem; font-size: 0.92rem; }
+  .entry-links a { margin-right: 1.2rem; }
+
+  /* ---------- Simple rows (teaching, education) ---------- */
+  .row { padding: 1.2rem 0; border-top: 1px solid var(--rule); display: grid; grid-template-columns: 1fr auto; gap: 0.4rem 1.5rem; align-items: baseline; }
+  .row:first-of-type { border-top: none; padding-top: 0; }
+  .row-title { font-weight: 500; font-size: 1.08rem; }
+  .row-sub { grid-column: 1; color: var(--ink-soft); font-size: 0.97rem; }
+  .row-when { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-faint); white-space: nowrap; }
+
+  /* ---------- Interests tags ---------- */
+  .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.4rem; }
+  .tags span {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    padding: 0.35rem 0.7rem;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Dark band (beyond economics) ---------- */
+  .dark-band { background: var(--dark); color: var(--dark-text); border-bottom: none; }
+  .dark-band .section-label { color: var(--dark-faint); }
+  .dark-band .section-body p { color: var(--dark-text); }
+  .dark-band .section-body p + p { color: var(--dark-faint); }
+  .dark-band h2 { color: var(--dark-text); }
+  .dark-band a { text-decoration-color: var(--dark-faint); }
+  .big-quiet {
+    font-size: 1.45rem;
+    font-weight: 300;
+    line-height: 1.5;
+    font-style: italic;
+  }
+
+  /* ---------- Footer (dark) ---------- */
+  footer { background: var(--dark); color: var(--dark-text); border-top: 1px solid var(--dark-rule); }
+  .footer-inner {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 4rem 2rem 3rem;
+  }
+  .footer-inner h2 { color: var(--dark-text); font-style: italic; font-weight: 400; font-size: 2rem; }
+  .contact-links { margin-top: 1.6rem; display: flex; flex-wrap: wrap; gap: 1.8rem; }
+  .contact-links a { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; text-decoration-color: var(--dark-faint); }
+  .colophon {
+    margin-top: 4rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--dark-rule);
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--dark-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  /* ---------- CV button ---------- */
+  .cv-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid var(--dark-faint);
+    padding: 0.7rem 1.3rem;
+    text-decoration: none;
+    color: var(--dark-text);
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  .cv-link:hover { border-color: var(--dark-text); background: rgba(233, 231, 224, 0.06); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px) {
+    body { font-size: 17px; }
+    .section-inner { grid-template-columns: 1fr; gap: 1.4rem; padding: 3.2rem 1.3rem; }
+    .section-label { position: static; }
+    .hero-inner { padding: 4.5rem 1.3rem 3.5rem; }
+    .footer-inner { padding: 3.2rem 1.3rem 2.4rem; }
+    .nav-inner { padding: 0.8rem 1.3rem; }
+    .nav-links { gap: 1rem; }
+    .row { grid-template-columns: 1fr; }
+    .entry-head { flex-direction: column; gap: 0.3rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Anirudh</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#research">Research</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#education">Education</a>
+      <a href="#beyond">Beyond</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header id="top">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Economics · Financial Econometrics · Macrofinance</p>
+    <h1>Anirudh</h1>
+    <p class="hero-sub">
+      Final-year BA Economics student at the <a href="https://mse.ac.in/">Madras School of Economics</a>,
+      heading to the <a href="https://bse.eu/">Barcelona School of Economics</a> for an MSc in Economics.
+      I work on how shocks move through financial markets — and, eventually, on the economics of
+      sanctions and financial statecraft.
+    </p>
+    <div class="ledger">
+      <span>Chennai 13.08°N</span>
+      <span>→ Barcelona 41.39°N</span>
+      <span>MSc Economics, BSE '27</span>
+      <span>FIDE-rated chess player</span>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">About</div>
+    <div class="section-body">
+      <p>
+        I'm a final-year undergraduate at the Madras School of Economics. Most of my work sits
+        at the intersection of econometrics and financial markets: how information transmits
+        across borders, how extreme events propagate, and what standard models get wrong when
+        you take them to Indian data.
+      </p>
+      <p>
+        In September 2026 I start the MSc Economics at the Barcelona School of Economics. The
+        longer-term plan is a PhD in macrofinance and financial econometrics. A question I keep
+        coming back to is how financial infrastructure gets used as an instrument of state
+        power — sanctions, reserve currencies, weaponized interdependence — and whether the
+        tools of financial econometrics can say something rigorous about it.
+      </p>
+      <p>
+        I work mainly in Stata and Python, write everything in LaTeX, and have spent more time
+        than I'd like to admit checking for lookahead bias in backtests.
+      </p>
+      <div class="tags">
+        <span>Financial Econometrics</span>
+        <span>Macrofinance</span>
+        <span>International Finance</span>
+        <span>Economic Statecraft</span>
+        <span>Applied Micro</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="research">
+  <div class="section-inner">
+    <div class="section-label">Research &amp; Projects</div>
+    <div class="section-body">
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Global Shocks and Indian Equity Returns: Information Transmission, Contagion, and Extreme Events</div>
+          <div class="entry-meta">2025–26 · with Nikhil Rajan</div>
+        </div>
+        <p>
+          How overnight global information moves the Nifty 50, 2019–2025. Baseline OLS,
+          instrumented with US Treasury yields (2SLS), rolling jump detection across both
+          indices, crisis interaction models, and a logit model of crash probability under
+          stress.
+        </p>
+        <div class="entry-links"><a href="#">Paper (PDF)</a><a href="#">Slides</a></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Farm-to-Non-Farm Employment Transitions in Rural India</div>
+          <div class="entry-meta">Ongoing · RA, Dr. Aritri Chakravarty</div>
+        </div>
+        <p>
+          Research assistant and co-author on a paper studying employment transitions out of
+          agriculture, using IHDS panel data and NSSO rounds. Work includes data construction,
+          panel estimation, and drafting.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Rainfall Shocks and Agricultural Wage Income in Rural Karnataka</div>
+          <div class="entry-meta">2025</div>
+        </div>
+        <p>
+          IHDS panel matched with ICRISAT district rainfall data across 25 districts. Pooled
+          OLS versus district fixed effects — the FE specification kills the naive rainfall
+          effect, confirming upward bias in OLS from district-level confounders.
+        </p>
+        <div class="entry-links"><a href="#">Paper (PDF)</a></div>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Black–Scholes Implied Volatility Validation on Nifty 50 Options</div>
+          <div class="entry-meta">2025</div>
+        </div>
+        <p>
+          Pricing errors from Black–Scholes regressed on moneyness, time to expiry, and
+          GARCH-estimated conditional volatility, to map where and why the model fails on
+          Indian index options.
+        </p>
+      </div>
+
+      <div class="entry">
+        <div class="entry-head">
+          <div class="entry-title">Mean-Reversion Backtesting Framework for NSE Equities</div>
+          <div class="entry-meta">2026 · Python</div>
+        </div>
+        <p>
+          A backtesting engine built to be hard to fool: anti-lookahead safeguards, realistic
+          Indian delivery costs, out-of-sample splits, and Monte Carlo null testing. Main
+          finding so far — timing alpha can be statistically real and still lose to
+          buy-and-hold on CAGR and Sharpe, because time out of the market is expensive.
+        </p>
+        <div class="entry-links"><a href="#">Code (GitHub)</a></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="teaching">
+  <div class="section-inner">
+    <div class="section-label">Teaching</div>
+    <div class="section-body">
+      <p style="margin-bottom: 1.8rem;">Teaching assistantships at the Madras School of Economics.</p>
+      <div class="row">
+        <div class="row-title">Game Theory</div>
+        <div class="row-when">Teaching Assistant</div>
+        <div class="row-sub">Normal and extensive form games, Nash equilibrium, mixed strategies, subgame perfection.</div>
+      </div>
+      <div class="row">
+        <div class="row-title">Intermediate Macroeconomics</div>
+        <div class="row-when">Teaching Assistant</div>
+        <div class="row-sub">IS-LM, AD-AS, growth, and open-economy macro for second-year students.</div>
+      </div>
+      <div class="row">
+        <div class="row-title">Introductory Microeconomics</div>
+        <div class="row-when">Teaching Assistant</div>
+        <div class="row-sub">Consumer and producer theory, markets, and welfare for first-year students.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="section-inner">
+    <div class="section-label">Education</div>
+    <div class="section-body">
+      <div class="row">
+        <div class="row-title">Barcelona School of Economics</div>
+        <div class="row-when">2026 – 2027</div>
+        <div class="row-sub">MSc Economics (incoming) · Barcelona, Spain</div>
+      </div>
+      <div class="row">
+        <div class="row-title">Madras School of Economics</div>
+        <div class="row-when">2023 – 2026</div>
+        <div class="row-sub">BA (Honours) Economics · Chennai, India · Coursework in applied econometrics, international trade, game theory, time series, and mathematics for economics.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="beyond" class="dark-band">
+  <div class="section-inner">
+    <div class="section-label">Beyond economics</div>
+    <div class="section-body">
+      <p class="big-quiet">
+        I'm a FIDE-rated chess player with over sixty international tournaments behind me,
+        across Standard, Rapid, and Blitz.
+      </p>
+      <p>
+        Chess is probably where my interest in strategic thinking started — long before game
+        theory gave it formal notation. These days it's equal parts competition and a way to
+        stay sane during exam season.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-inner">
+    <h2>Get in touch</h2>
+    <div class="contact-links">
+      <a href="mailto:YOUR_EMAIL_HERE">Email</a>
+      <a href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a>
+      <a href="https://github.com/YOUR_GITHUB">GitHub</a>
+      <a href="https://ratings.fide.com/profile/YOUR_FIDE_ID">FIDE profile</a>
+    </div>
+    <a class="cv-link" href="cv.pdf">Download CV ↓</a>
+    <div class="colophon">
+      <span>Anirudh · Chennai → Barcelona</span>
+      <span>Last updated June 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
