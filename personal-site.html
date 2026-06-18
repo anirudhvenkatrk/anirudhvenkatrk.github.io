@@ -1,0 +1,146 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anirudh</title>
+<style>
+  :root{
+    --bg:#faf8f3;
+    --ink:#1d1b18;
+    --muted:#6b675f;
+    --line:#e7e2d8;
+    --accent:#9a5a3b;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:660px;margin:0 auto;padding:0 24px}
+  header{padding:80px 0 8px}
+  .photo{
+    width:96px;height:96px;border-radius:50%;
+    object-fit:cover;display:block;margin-bottom:26px;
+    border:1px solid var(--line);background:#eee;
+  }
+  h1{
+    font-family:"Iowan Old Style",Palatino,"Palatino Linotype",Georgia,serif;
+    font-weight:600;font-size:34px;letter-spacing:-.01em;margin:0 0 6px;
+  }
+  .tag{color:var(--muted);font-size:15px;margin:0 0 28px;letter-spacing:.01em}
+  .intro{font-size:18px;color:var(--ink);margin:0 0 28px;max-width:54ch}
+  .cv{
+    display:inline-block;border:1px solid var(--ink);color:var(--ink);
+    padding:9px 18px;border-radius:2px;font-size:15px;border-bottom:1px solid var(--ink);
+    transition:background .15s,color .15s;
+  }
+  .cv:hover{background:var(--ink);color:var(--bg)}
+  nav{margin-top:30px;font-size:14px;color:var(--muted)}
+  nav a{margin-right:16px}
+  section{padding:46px 0;border-top:1px solid var(--line)}
+  h2{
+    font-family:"Iowan Old Style",Palatino,Georgia,serif;
+    font-weight:600;font-size:14px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 22px;
+  }
+  p{margin:0 0 14px}
+  .work{margin:0 0 30px}
+  .work:last-child{margin-bottom:0}
+  .work h3{
+    font-family:"Iowan Old Style",Palatino,Georgia,serif;
+    font-weight:600;font-size:19px;margin:0 0 5px;line-height:1.35;
+  }
+  .work .meta{color:var(--muted);font-size:14px;margin:0 0 8px}
+  .work p{font-size:16px;color:#3c3933;margin:0 0 8px}
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
+  a:hover{border-color:var(--accent)}
+  .links a{margin-right:18px;font-size:15px}
+  ul{margin:0;padding-left:18px}
+  li{margin:0 0 8px;color:#3c3933}
+  /* cover letter */
+  .letter{padding-bottom:20px}
+  .letter .date{color:var(--muted);font-size:15px;margin:0 0 22px}
+  .letter .to{margin:0 0 22px}
+  .letter p{font-size:16px;color:#2c2a25;line-height:1.7}
+  .letter .sign{margin-top:24px}
+  .back{font-size:14px}
+  footer{padding:40px 0 90px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  .reveal{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(max-width:480px){header{padding:54px 0 4px}h1{font-size:28px}nav a{display:inline-block;margin-bottom:6px}}
+</style>
+
+<div class="wrap">
+
+  <header class="reveal" id="top">
+    <!-- Replace photo.jpg with your image file (drop it in the same folder) -->
+    <img class="photo" src="photo.jpg" alt="Anirudh">
+    <h1>Anirudh</h1>
+    <p class="tag">Economics · Madras School of Economics</p>
+    <p class="intro">I work on financial econometrics and macrofinance. Heading to the Barcelona School of Economics for an MSc this autumn.</p>
+    <!-- Replace cv.pdf with your file -->
+    <a class="cv" href="cv.pdf">Download CV</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#interests">Interests</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="reveal" id="about">
+    <h2>About</h2>
+    <p>Final-year economics student at the Madras School of Economics. I'm drawn to how global shocks move through markets — exchange rates, equities, international finance.</p>
+    <p>Curious by default. I learn by building things and following questions until they make sense.</p>
+  </section>
+
+  <section class="reveal" id="interests">
+    <h2>Interests</h2>
+    <ul>
+      <li>Macrofinance, international finance, and economic statecraft</li>
+      <li>Systematic and quantitative trading</li>
+      <li>Chess — FIDE-rated, across standard, rapid, and blitz</li>
+    </ul>
+  </section>
+
+  <section class="reveal" id="projects">
+    <h2>Projects</h2>
+
+    <div class="work">
+      <h3>Global Shocks and Indian Equity Returns</h3>
+      <p class="meta">with Nikhil Rajan · Applied Econometrics</p>
+      <p>How international shocks transmit to the Nifty 50 — OLS and 2SLS estimation, jump and contagion detection, crisis-period interactions.</p>
+      <a href="#">Read the paper →</a>
+    </div>
+
+    <div class="work">
+      <h3>Rainfall Shocks and Agricultural Wages in Rural Karnataka</h3>
+      <p class="meta">IHDS panel · district fixed effects</p>
+      <p>Estimating the effect of rainfall variation on farm wages, with attention to omitted-variable bias across pooled and fixed-effects specifications.</p>
+      <a href="#">Read the paper →</a>
+    </div>
+
+  </section>
+
+  <section class="reveal" id="contact">
+    <h2>Contact</h2>
+    <div class="links">
+      <a href="mailto:you@email.com">Email</a>
+      <a href="https://github.com/yourusername">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+    </div>
+  </section>
+
+  <footer>© <span id="yr"></span> Anirudh</footer>
+
+</div>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  const io = new IntersectionObserver((es)=>{
+    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
